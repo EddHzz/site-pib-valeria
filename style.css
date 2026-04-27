@@ -629,11 +629,30 @@ button {
 
 .gallery-card {
   overflow: hidden;
-  padding: 18px;
+  display: block;
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   border-color: rgba(255, 255, 255, 0.14);
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gallery-card:hover,
+.gallery-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 60px rgba(7, 20, 45, 0.28);
+}
+
+.gallery-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+}
+
+.gallery-copy {
+  padding: 20px 20px 22px;
 }
 
 .gallery-label {
@@ -641,7 +660,7 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 0 4px 14px;
+  padding-bottom: 14px;
   color: var(--white);
 }
 
@@ -660,17 +679,14 @@ button {
   font-size: 0.96rem;
 }
 
-.gallery-card .instagram-media {
-  min-width: 100% !important;
-  width: 100% !important;
-  margin: 0 !important;
-  border-radius: 22px !important;
-  border: 0 !important;
-  box-shadow: none !important;
+.gallery-copy h3 {
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+  color: var(--white);
 }
 
-.gallery-card .instagram-media iframe {
-  border-radius: 22px !important;
+.gallery-copy p {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .gallery-action {
